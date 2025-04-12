@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://4mi054wl5e8w"]
+
+[ext_resource type="PackedScene" uid="uid://wpd6m7trg4o8" path="res://scenes/player.tscn" id="1_nnsk1"]
+[ext_resource type="PackedScene" uid="uid://bn3yqaqp5gupk" path="res://scenes/coffin.tscn" id="2_rwgxs"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_nnsk1"]
+size = Vector2(1000, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rwgxs"]
+size = Vector2(1002, 102)
+
+[node name="World" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_nnsk1")]
+position = Vector2(282, 437)
+
+[node name="Platform" type="StaticBody2D" parent="."]
+position = Vector2(588, 551)
+collision_layer = 3
+collision_mask = 3
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Platform"]
+modulate = Color(0.131379, 0.131379, 0.131379, 1)
+mesh = SubResource("QuadMesh_nnsk1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
+shape = SubResource("RectangleShape2D_rwgxs")
+
+[node name="Coffin" parent="." instance=ExtResource("2_rwgxs")]
+position = Vector2(626, 192)
+collision_layer = 2
+collision_mask = 2
