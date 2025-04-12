@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://4mi054wl5e8w"]
+[gd_scene load_steps=7 format=3 uid="uid://4mi054wl5e8w"]
 
 [ext_resource type="Script" uid="uid://b75j0wvj8pn8j" path="res://scripts/restart.gd" id="1_4wyf3"]
 [ext_resource type="PackedScene" uid="uid://wpd6m7trg4o8" path="res://scenes/player.tscn" id="1_nnsk1"]
 [ext_resource type="PackedScene" uid="uid://bn3yqaqp5gupk" path="res://scenes/coffin.tscn" id="2_rwgxs"]
+[ext_resource type="PackedScene" uid="uid://mequ40xbg6tq" path="res://scenes/light.tscn" id="4_k0juu"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_nnsk1"]
 size = Vector2(1000, 100)
@@ -32,3 +33,6 @@ shape = SubResource("RectangleShape2D_rwgxs")
 position = Vector2(626, 192)
 collision_layer = 2
 collision_mask = 2
+
+[node name="Light" parent="." instance=ExtResource("4_k0juu")]
+position = Vector2(128, 265)
