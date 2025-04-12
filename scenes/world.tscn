@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://4mi054wl5e8w"]
+[gd_scene load_steps=6 format=3 uid="uid://4mi054wl5e8w"]
 
+[ext_resource type="Script" uid="uid://b75j0wvj8pn8j" path="res://scripts/restart.gd" id="1_4wyf3"]
 [ext_resource type="PackedScene" uid="uid://wpd6m7trg4o8" path="res://scenes/player.tscn" id="1_nnsk1"]
 [ext_resource type="PackedScene" uid="uid://bn3yqaqp5gupk" path="res://scenes/coffin.tscn" id="2_rwgxs"]
 
@@ -10,6 +11,7 @@ size = Vector2(1000, 100)
 size = Vector2(1002, 102)
 
 [node name="World" type="Node2D"]
+script = ExtResource("1_4wyf3")
 
 [node name="Player" parent="." instance=ExtResource("1_nnsk1")]
 position = Vector2(282, 437)
