@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://bn3yqaqp5gupk"]
 
-[ext_resource type="Texture2D" uid="uid://bo2ktwcym8wxp" path="res://icon.svg" id="1_fe18d"]
 [ext_resource type="Script" uid="uid://co6msho7vw6gw" path="res://scripts/coffin.gd" id="1_o11qi"]
+[ext_resource type="Texture2D" uid="uid://kx56ne1w5sn1" path="res://assets/Coffin.png" id="2_o11qi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fe18d"]
-size = Vector2(399, 112)
+size = Vector2(159, 56)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o11qi"]
-size = Vector2(426, 127)
+size = Vector2(161.25, 57.75)
 
 [node name="Coffin" type="RigidBody2D"]
 collision_layer = 7
@@ -15,16 +15,16 @@ collision_mask = 0
 script = ExtResource("1_o11qi")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-0.500008, 0)
-scale = Vector2(3.36719, 1)
-texture = ExtResource("1_fe18d")
+position = Vector2(-1, 0.5)
+scale = Vector2(0.0791016, -0.0288086)
+texture = ExtResource("2_o11qi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 1)
+position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_fe18d")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, -0.5)
+position = Vector2(-0.625, 0.125)
 shape = SubResource("RectangleShape2D_o11qi")

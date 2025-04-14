@@ -1,15 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://4mi054wl5e8w"]
+[gd_scene load_steps=8 format=3 uid="uid://4mi054wl5e8w"]
 
 [ext_resource type="Script" uid="uid://b75j0wvj8pn8j" path="res://scripts/restart.gd" id="1_4wyf3"]
 [ext_resource type="PackedScene" uid="uid://wpd6m7trg4o8" path="res://scenes/player.tscn" id="1_nnsk1"]
 [ext_resource type="PackedScene" uid="uid://bn3yqaqp5gupk" path="res://scenes/coffin.tscn" id="2_rwgxs"]
 [ext_resource type="PackedScene" uid="uid://mequ40xbg6tq" path="res://scenes/light.tscn" id="4_k0juu"]
+[ext_resource type="PackedScene" uid="uid://b64wqsohk0j5v" path="res://scenes/lamppost.tscn" id="5_qfnet"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_nnsk1"]
 size = Vector2(1000, 100)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rwgxs"]
-size = Vector2(1002, 102)
+size = Vector2(355.75, 102)
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_4wyf3")
@@ -18,21 +19,65 @@ script = ExtResource("1_4wyf3")
 position = Vector2(282, 437)
 
 [node name="Platform" type="StaticBody2D" parent="."]
-position = Vector2(588, 551)
+position = Vector2(586, 545)
 collision_layer = 3
 collision_mask = 3
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="Platform"]
 modulate = Color(0.131379, 0.131379, 0.131379, 1)
+position = Vector2(-410.5, 50)
+scale = Vector2(0.357, 1)
 mesh = SubResource("QuadMesh_nnsk1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
+position = Vector2(-410, 52)
+shape = SubResource("RectangleShape2D_rwgxs")
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="Platform"]
+modulate = Color(0.131379, 0.131379, 0.131379, 1)
+position = Vector2(406.5, 55)
+scale = Vector2(0.357, 1)
+mesh = SubResource("QuadMesh_nnsk1")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Platform"]
+position = Vector2(400, 57)
+shape = SubResource("RectangleShape2D_rwgxs")
+
+[node name="MeshInstance2D3" type="MeshInstance2D" parent="Platform"]
+modulate = Color(0.131379, 0.131379, 0.131379, 1)
+position = Vector2(11.5, 167)
+scale = Vector2(0.357, 1)
+mesh = SubResource("QuadMesh_nnsk1")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Platform"]
+position = Vector2(10.25, 169)
+shape = SubResource("RectangleShape2D_rwgxs")
+
+[node name="MeshInstance2D4" type="MeshInstance2D" parent="Platform"]
+modulate = Color(0.131379, 0.131379, 0.131379, 1)
+position = Vector2(758, 56)
+scale = Vector2(0.357, 1)
+mesh = SubResource("QuadMesh_nnsk1")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Platform"]
+position = Vector2(756, 57)
 shape = SubResource("RectangleShape2D_rwgxs")
 
 [node name="Coffin" parent="." instance=ExtResource("2_rwgxs")]
-position = Vector2(626, 192)
+position = Vector2(278, 469)
 collision_layer = 2
 collision_mask = 2
 
 [node name="Light" parent="." instance=ExtResource("4_k0juu")]
-position = Vector2(128, 265)
+position = Vector2(466, 608)
+
+[node name="StaticBody2D" parent="." instance=ExtResource("5_qfnet")]
+position = Vector2(1170, 552)
+
+[node name="Light2" parent="." instance=ExtResource("4_k0juu")]
+position = Vector2(694, 602)
+
+[node name="Platform2" type="StaticBody2D" parent="."]
+position = Vector2(1403, 550)
+collision_layer = 3
+collision_mask = 3
